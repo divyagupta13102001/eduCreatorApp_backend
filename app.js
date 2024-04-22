@@ -8,9 +8,7 @@ const upload = multer({ dest: 'uploads/' });
 // Initialize Express app
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({
-    origin: 'http://127.0.0.1:8081',
-  }));
+app.use(cors())
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017', {

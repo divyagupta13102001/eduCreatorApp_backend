@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors())
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect('mongodb+srv://divyagupta1310:RKaXrHZyMldS63w2@cluster0.vkbxuvp.mongodb.net/', {
    
 })
 .then(() => console.log('MongoDB connected'))
@@ -38,4 +38,9 @@ app.post('/api/upload-profile-photo', upload.single('profilePhoto'), (req, res) 
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+try{
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}catch{
+    console.log("error")
+}
+
